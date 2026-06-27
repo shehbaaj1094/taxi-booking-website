@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maxi Taxi - Premium Taxi Service</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Maxi Taxi</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#booking">Book Now</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Premium Taxi Service</h1>
+            <p>Reliable, Safe & Affordable Transportation</p>
+            <button class="btn btn-primary" onclick="document.getElementById('booking').scrollIntoView()">Book a Ride</button>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-car"></i>
+                    <h3>Mini Taxi</h3>
+                    <p>Perfect for 1-4 passengers. Ideal for daily commute and short trips.</p>
+                    <span class="price">Starting from $5</span>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-shuttle-van"></i>
+                    <h3>Maxi Taxi</h3>
+                    <p>Spacious comfort for 5-8 passengers. Perfect for group travel.</p>
+                    <span class="price">Starting from $12</span>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bus"></i>
+                    <h3>Micro Bus</h3>
+                    <p>Large capacity up to 12 passengers. Ideal for tours and events.</p>
+                    <span class="price">Starting from $20</span>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-plane"></i>
+                    <h3>Airport Transfer</h3>
+                    <p>Reliable airport pickup and drop-off service 24/7.</p>
+                    <span class="price">Starting from $25</span>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>Event Transport</h3>
+                    <p>Perfect for weddings, conferences, and special events.</p>
+                    <span class="price">Custom Pricing</span>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-suitcase"></i>
+                    <h3>Corporate Travel</h3>
+                    <p>Professional business travel solutions with dedicated drivers.</p>
+                    <span class="price">Custom Pricing</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2>Quick Booking</h2>
+            <form class="booking-form" onsubmit="handleBooking(event)">
+                <div class="form-group">
+                    <label>Pickup Location</label>
+                    <input type="text" placeholder="Enter pickup location" required>
+                </div>
+                <div class="form-group">
+                    <label>Dropoff Location</label>
+                    <input type="text" placeholder="Enter dropoff location" required>
+                </div>
+                <div class="form-group">
+                    <label>Date & Time</label>
+                    <input type="datetime-local" required>
+                </div>
+                <div class="form-group">
+                    <label>Taxi Type</label>
+                    <select required>
+                        <option>Mini Taxi</option>
+                        <option>Maxi Taxi</option>
+                        <option>Micro Bus</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Passengers</label>
+                    <input type="number" min="1" max="12" placeholder="Number of passengers" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Book Now</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Why Choose Maxi Taxi?</h3>
+                    <ul>
+                        <li><strong>Professional Drivers:</strong> Trained and courteous drivers</li>
+                        <li><strong>Clean Vehicles:</strong> Well-maintained fleet of taxis</li>
+                        <li><strong>Best Prices:</strong> Competitive and transparent pricing</li>
+                        <li><strong>24/7 Service:</strong> Available round the clock</li>
+                        <li><strong>Safety First:</strong> Your safety is our priority</li>
+                        <li><strong>On-Time:</strong> Punctual and reliable service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>+1 (555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@maxitaxi.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>123 Taxi Station, Your City</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" onsubmit="handleContact(event)">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Maxi Taxi. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
